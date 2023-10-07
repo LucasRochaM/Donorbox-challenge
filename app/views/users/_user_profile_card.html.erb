@@ -1,0 +1,35 @@
+<div class="card-container">
+  <span class="<%= @user[:online] ? 'online' : 'offline' %>"></span>
+  <%= image_tag(@user[:avatar_url]) %>
+  <h3><%= @user[:full_name] %></h3>
+  <h6><%= @user[:address] %></h6>
+  <p>User interface designer and <br/> front-end developer</p>
+  <div class="buttons">
+    <button class="primary message-button">
+      Message
+    </button>
+    <button class="primary follow">
+      Following
+    </button>
+  </div>
+  <div class="input-group message-input my-3 px-3" style="display: none;">
+    <input type="text" class="form-control" placeholder="Send a message" aria-label="Send a message" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa-brands fa-telegram"></i></button>
+  </div>
+  <div class="groups">
+    <h6>Groups</h6>
+    <ul>
+      <% @user[:groups].each do |group| %>
+        <li><%= group %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $(".message-button").click(function () {
+      $(".message-input").toggle();
+    });
+  });
+</script>

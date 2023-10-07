@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   root "users#index"
+  get '/users/fetch_user_details', to: 'users#fetch_user_details'
+
+  resources :users do
+    member do
+      get 'fetch_details'
+    end
+  end
 end

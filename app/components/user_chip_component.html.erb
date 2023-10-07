@@ -1,0 +1,37 @@
+<div class="chip">
+  <%= image_tag(@user[:avatar_url]) %>
+  <div class="<%= @user[:online] == true ? 'online-status' : 'offline-status' %>"></div>
+  <span class="text-white"><%= @user[:username] %></span>
+</div>
+
+<script>
+  $(document).on('mouseenter', '.chip', function () {
+    var card = $('.card-hover');
+
+    if (!card.is(':hover')) {
+      $.ajax({
+        url: '/users/fetch_user_details',
+        type: 'GET',
+        success: function (data) {
+          card.html(data).fadeIn('slow');
+        },
+      });
+    }
+  });
+
+  $(document).on('mouseleave', '.chip', function () {
+    var card = $('.card-hover');
+
+    if (!card.is(':hover')) {
+      card.fadeOut('slow');
+    }
+  });
+
+  $(document).on('mouseenter', '.card-hover', function () {
+    $(this).show();
+  });
+
+  $(document).on('mouseleave', '.card-hover', function () {
+    $(this).fadeOut('slow');
+  });
+</script>
