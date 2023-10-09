@@ -1,8 +1,8 @@
 <div class="card-container">
-  <span class="<%= @user[:online] ? 'online' : 'offline' %>"></span>
-  <%= image_tag(@user[:avatar_url]) %>
-  <h3><%= @user[:full_name] %></h3>
-  <h6><%= @user[:address] %></h6>
+  <span class="<%= user[:online] ? 'online' : 'offline' %>"></span>
+  <%= image_tag(user[:avatar_url]) %>
+  <h3><%= user[:full_name] %></h3>
+  <h6><%= user[:address] %></h6>
   <p>User interface designer and <br/> front-end developer</p>
   <div class="buttons">
     <button class="primary message-button">
@@ -19,7 +19,7 @@
   <div class="groups">
     <h6>Groups</h6>
     <ul>
-      <% @user[:groups].each do |group| %>
+      <% user[:groups].each do |group| %>
         <li><%= group %></li>
       <% end %>
     </ul>

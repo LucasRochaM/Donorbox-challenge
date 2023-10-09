@@ -86,8 +86,8 @@
   background-color: grey; 
   border-radius: 50%;
   position: absolute;
-  top: 6px;
-  right: 14px;
+  top: 3px;
+  left: 38px;
 }
 
 .user-profile-card {
