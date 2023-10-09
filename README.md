@@ -1,24 +1,40 @@
-# README
+# Meu Projeto Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Donorbox Frontend Challenge
 
-Things you may want to cover:
+## Configuração do Ambiente
 
-* Ruby version
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
 
-* System dependencies
+- [Ruby 3.2.2](https://www.ruby-lang.org/en/documentation/installation/)
+- [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html#installing-rails)
+- [Bundler](https://bundler.io/)
 
-* Configuration
+## Instalação
 
-* Database creation
+1. Clone este repositório em sua máquina local:
+```
+   git clone git@github.com:LucasRochaM/Donorbox-challenge.git
+```
+Acesse o diretório do projeto:
+```
+cd Donorbox-challenge
+```
 
-* Database initialization
+Instale as dependências do Ruby:
+```
+bundle install
+```
 
-* How to run the test suite
+Configure o banco de dados e execute as migrações:
+```
+bin/rails db:setup
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Executando o Servidor de Desenvolvimento
+Para iniciar o servidor de desenvolvimento, você pode usar o comando bin/dev:
+```
+bin/dev
+```
 
-* Deployment instructions
-
-* ...
+Isso iniciará o servidor Rails em http://localhost:3000.
